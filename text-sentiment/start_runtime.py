@@ -13,27 +13,17 @@
 # limitations under the License.
 
 # Standard
-from os import path
-import sys
-# from caikit.runtime import grpc_server
+import os
 
 # First Party
 import alog
 
-# Here we assume that `start_runtime` file is at the same level of the `text_sentiment` package
-sys.path.append(
-   path.abspath(path.join(path.dirname(__file__), "../"))
-)
-
 # Local
+from caikit.runtime import grpc_server
 import text_sentiment
 
 alog.configure(default_level="debug")
 
-# Local
-# from caikit.runtime import grpc_server
-
 # Start the gRPC Caikit runtime server
-# grpc_server.main()
-
-# TODO: Implement your own gRPC server or use an alternative package here.
+if __name__ == "__main__":
+    grpc_server.main()

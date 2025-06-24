@@ -1,0 +1,6 @@
+runtime:
+  metrics:
+    port: 65535
+  grpc:
+    port: 8085
+  local_models_dir: /home/project/text-sentiment/models/text_sentiment

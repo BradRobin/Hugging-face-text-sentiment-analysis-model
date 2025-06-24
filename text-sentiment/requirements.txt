@@ -1,6 +1,5 @@
 caikit[all]==0.9.2
-
-# Only needed for Hugging Face
+alog>=1.2.0
 scipy
 torch
 transformers~=4.27.2
