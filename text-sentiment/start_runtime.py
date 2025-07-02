@@ -1,5 +1,13 @@
+import sys
 import multiprocessing
-multiprocessing.set_start_method('spawn', force=True)
+
+if sys.platform == "win32":
+    orig_get_context = multiprocessing.get_context
+    def get_context(method=None):
+        if method in ("fork", "forkserver"):
+            method = "spawn"
+        return orig_get_context(method)
+    multiprocessing.get_context = get_context
 
 # Copyright The Caikit Authors
 #
